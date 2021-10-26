@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="pole"/>
+        <button type="submit">Pokaż</button>
+
+    </form>
+    <div class="wynik">
+
+    </div>
+    <script>
+        //ddowłujemy sie do formularza, pobiermay ten formularz
+       
+        const formularz = document.querySelector('form');
+
+        //odwołujemy się do anszego diva o klasie wynik 
+        
+        const div = document.querySelector('.wynik');
+        
+        //przypisujmy zdarzenie do naszego formularza które uruchomi funkcje przez przeglądarkę zadrzenie nazywa się submit
+       
+        formularz.addEventListener('submit',(e)=>{
+           
+            // zatzrymujemy domyslną wartisć przegładarki w przypadku formularza 
+           
+            e.preventDefault();
+       
+            //odwołujemy się do pola w formularzu i pobieramy jej wartość     
+        const wartoscPolaFormularza = document.querySelector('input[name="pole"]').value;
+
+        if (wartoscPolaFormularza % 2 == 0){
+            div.textContent = 'Liczba jest parzysta';
+        }else{
+            div.textContent = 'Liczba jest nieparzysta';
+        }
+
+        //wartosc pola fomularza wrzucamy do diva 
+       
+        //div.textContent = wartoscPolaFormularza;
+
+
+        });
+    </script>
+</body>
+</html>
